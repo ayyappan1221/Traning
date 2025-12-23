@@ -1,5 +1,6 @@
 import java.util.Scanner;
-class Node{
+
+class Node {
     int data;
     Node next;
 
@@ -35,7 +36,14 @@ public class BasicLink {
 
     // Creates linked list and returns head
     static Node createLinkedList(int a[]) {
-        
+        int n = a.length;
+        Node head = new Node(a[0]);
+        Node temp = head;
+        for (int i = 1; i < n; i++) {
+            temp.next = new Node(a[i]);
+            temp = temp.next;
+        }
+        return head;
     }
 
     // Displays linked list
